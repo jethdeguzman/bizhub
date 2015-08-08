@@ -44,7 +44,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="price col-md-6 text-left">
-                                    <h5 class="">Sample Product</h5>
+                                    <h5 class="">{{ $product->name }}</h5>
                                     <small>6 Resellers</small>
                                 </div>
                                 <div class="rating hidden-sm col-md-6">

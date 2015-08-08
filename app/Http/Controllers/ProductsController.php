@@ -6,20 +6,22 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\ProductsRepository as Products;
+use App\Repositories\ProductsRepository as productRepository;
 use App\Repositories\ProductResellerRepository as ProductReseller;
 use App\Repositories\UserRepository as User;
+use App\Repositories\SupplierResellerRepository as SupplierResellerRepository;
 use Illuminate\Contracts\Auth\Guard;
 use DB;
+use App\Products as Product;
 
 class ProductsController extends Controller
 {
-    protected $products;
+    protected $productRepository;
     protected $auth;
 
-    public function __construct(Products $products, Guard $auth, User $user, ProductReseller $productReseller)
+    public function __construct(productRepository $productRepository, Guard $auth, User $user, ProductReseller $productReseller)
     {
-        $this->products = $products;
+        $this->productRepository = $productRepository;
         $this->auth = $auth;
         $this->userid = $this->auth->id();
         $this->user = $user;
@@ -38,10 +40,10 @@ class ProductsController extends Controller
     {
         if ($this->user_type == 1) {
             // Supplier
-            $products = $this->products->findBy('user_id', $this->userid);
+           $products= $this->productRepository->findBy('user_id', $this->userid);
         } else if ($this->user_type == 2) {
             // Reseller
-            $products = $this->productReseller->getProducts($this->userid);
+           $products= $this->productReseller->getProducts($this->userid);
         }
 
         dd($products);
@@ -64,11 +66,11 @@ class ProductsController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, SupplierResellerRepository $supplierResellerRepository)
     {
         if ($this->user_type == 1) {
             // Supplier
-            return $this->products->store(array(
+            return $this->productRepository->store(array(
                 'name' => $request->get('name'),
                 'reference_code' => $request->get('reference_code'),
                 'description' => $request->get('description'),
@@ -80,10 +82,22 @@ class ProductsController extends Controller
 
         } else if ($this->user_type == 2) {
             // Reseller
-            return $this->productReseller->store(array(
+            // Add products to the reseller
+            /*$this->productReseller->store(array(
                 'reseller_id' => $this->userid,
                 'product_id' => $request->get('product_id')
-                ));
+                ));*/
+            
+            $suppliers = $this->productRepository->find($request->get('product_id'));
+            $supplier_id = $suppliers->supplier_id;
+
+            // Add the relationship if not yet exists
+            if ($supplierResellerRepository->exists($supplier_id, $this->userid) < 1) {
+                $supplierResellerRepository->store(array(
+                        'supplier_id' => $supplier_id, 
+                        'reseller_id' => $this->userid
+                        ));
+            }
             
         }
         
@@ -95,9 +109,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('products/supplier-show', ['product' => $product]);
     }
 
     /**
