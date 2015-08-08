@@ -20,15 +20,15 @@ class ProductsController extends Controller
 {
     protected $productRepository;
     protected $auth;
-
-    public function __construct(productRepository $productRepository, Guard $auth, User $user, ProductReseller $productReseller)
+    protected $supplierReseller;
+    public function __construct(productRepository $productRepository, Guard $auth, User $user, ProductReseller $productReseller, SupplierResellerRepository $supplierReseller)
     {
         $this->productRepository = $productRepository;
         $this->auth = $auth;
         $this->userid = $this->auth->id();
         $this->user = $user;
         $this->productReseller = $productReseller;
-
+        $this->supplierReseller = $supplierReseller;
         $user = $this->user->find($this->userid);
         $this->user_type = $user->type;
     }
@@ -43,23 +43,14 @@ class ProductsController extends Controller
         if ($this->user_type == 1) {
             // Supplier
            $products= $this->productRepository->findBy('user_id', $this->userid);
+           return view('products.supplier', ['products' => $products]);
+        
         } else if ($this->user_type == 2) {
             // Reseller
-           $products= $this->productReseller->getProducts($this->userid);
+            $products= Product::all();
+            return view('products.reseller-add', ['products' => $products]);
         }
 
-        return view('products.reseller-add', ['products' => $products]);
-           
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -116,56 +107,22 @@ class ProductsController extends Controller
         return view('products/supplier-show', ['product' => $product]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    public function addProduct($productId){
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function addProduct(Product $product){
         $reseller = Auth::user();
+        $suppliers = $this->productRepository->find($productId);
+        $supplier_id = $suppliers->user_id;
 
         $this->productReseller->store(array(
         'reseller_id' => $reseller->id,
-        'product_id' => $product->id
+        'product_id' => $productId
         ));
 
-        $this->supplierReseller->store([
+        $this->supplierReseller->store(array(
                 'reseller_id' => $reseller->id,
-                'supplier_id' => $supplier->id,
-        ]);
-
-
-        return 'New Product has been added to your store items';
-
-
+                'supplier_id' => $supplier_id,
+        ));
+        return redirect('/products')->with('message', 'Successfully Added to Your Products');
     }
 }

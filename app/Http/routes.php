@@ -24,10 +24,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/suppliers', 'ResellerController@index');
     Route::get('/suppliers/all', 'ResellerController@all');
     Route::get('/supplier/hire/{id}', 'SupplierController@hire');
+    Route::get('products/new', function(){ return view('products.supplier-add');});
     Route::resource('products', 'ProductsController');
-   	Route::post('products/{product}/add', 'ProductsController@addProduct');
+   	Route::get('products/{product}/add', 'ProductsController@addProduct');
 
-        
 });
 
 Route::get('/', function () {

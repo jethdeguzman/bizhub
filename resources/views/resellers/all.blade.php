@@ -57,6 +57,8 @@
                     </div>
                 </div>
               @endforeach
+              @else
+              <p style="font-size:20px;">No Resellers at the moment.</p>
             @endif
             </div>
         </div>

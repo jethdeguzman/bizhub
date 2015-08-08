@@ -24,6 +24,6 @@ class Products extends Model
 
     public function supplier()
     {
-        $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 }
