@@ -25,9 +25,10 @@ class UserRepository extends BaseRepository implements UserInterface
     public function resellersByType($type)
     {
         $instance = $this->getNewInstance();
-        return $instance->select('*', 'supplier_reseller.reseller_id as hired', 'users.id as user_id')
+        return $instance->select('users.company_name', 'supplier_reseller.reseller_id as hired', 'users.id as user_id', DB::raw("count('supplier_reseller.id') as total"))
                         ->leftJoin('supplier_reseller','supplier_reseller.reseller_id', '=', 'users.id')
                         ->whereType($type)
+                        ->groupBy('users.company_name', 'hired', 'user_id')
                         ->get();
     }
 
