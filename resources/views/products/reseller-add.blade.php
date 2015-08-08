@@ -46,11 +46,11 @@
                 @foreach($products as $product)
 
                 <div class="col-sm-3">
-                    <div class="col-item">
+                    <div class="col-item" style="height:400px;">
                         <div class="photo">
-                            <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                            <img src="{{$product->image}}"  alt="a"  style="" height="250"/>
                         </div>
-                        <div class="info">
+                        <div class="info" >
                             <div class="row">
                                 <div class="price col-md-6 text-left">
                                     <h5 class="">{{ $product->name }}</h5>
@@ -64,7 +64,7 @@
                             <div class="separator clear-left">
                                 
                                 <p><a type="button" data-toggle="modal" data-target="#modal{{$product->id}}" class="hidden-sm btn btn-primary btn-block">Add to my Products</a></p>
-                                }
+                                
                             </div>
                             <div class="clearfix">
                             </div>
