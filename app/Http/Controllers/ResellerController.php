@@ -10,9 +10,8 @@ use App\Repositories\UserRepository as User;
 use Illuminate\Contracts\Auth\Guard;
 use App\Repositories\SupplierResellerRepository as SupplierReseller;
 
-class SupplierController extends Controller
+class ResellerController extends Controller
 {
-
     protected $auth;
     protected $user;
     protected $supplierReseller;
@@ -25,38 +24,25 @@ class SupplierController extends Controller
         $this->supplierReseller = $supplierReseller;
     }
 
-     /**
+    /**
      * Display a listing of the resource.
-     * Lists of my resellers
-     *
+     * Listing of my suppliers
      * @return Response
      */
     public function index()
     {
-        $resellers = $this->user->getMyResellers($this->userid);
-        dd($resellers);
+        $suppliers = $this->user->getMySuppliers($this->userid);
+        dd($suppliers);
     }
 
     /**
-     * Lists of all available resellers
+     * Show the form for creating a new resource.
      *
-     * @param
      * @return Response
      */
-    public function all()
+    public function create()
     {
-        // Supplier type = 2
-        $resellers = $this->user->allByType('2');
-        dd($resellers);
-    }
-
-    public function hire(Request $request)
-    {
-        $reseller_id = $request->get('reseller_id');
-        return $this->supplierReseller->store(array(
-            'supplier_id' => $this->userid, 
-            'reseller_id' => $reseller_id
-            ));
+        //
     }
 
     /**
