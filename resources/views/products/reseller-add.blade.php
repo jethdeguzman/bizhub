@@ -37,6 +37,8 @@
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
+                @foreach($products as $product)
+
                 <div class="col-sm-3">
                     <div class="col-item">
                         <div class="photo">
@@ -45,12 +47,12 @@
                         <div class="info">
                             <div class="row">
                                 <div class="price col-md-6 text-left">
-                                    <h5 class="">Sample Product</h5>
-                                    <small>Supplier name</small>
+                                    <h5 class="">{{ $product->name }}</h5>
+                                    <small>{{ $product->supplier->name }}</small>
                                 </div>
                                 <div class="rating hidden-sm col-md-6">
-                                    <h5 class="">SRP: P200.00</h5>
-                                    <h6 class="">RP: P160.00</h6>
+                                    <h5 class="">SRP: P{{ $product->suggested_retail_price }}</h5>
+                                    <h6 class="">RP: P{{ $product->reseller_price }}</h6>
                                 </div>
                             </div>
                             <div class="separator clear-left">
@@ -61,125 +63,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6 text-left">
-                                    <h5 class="">Sample Product</h5>
-                                    <small>Supplier name</small>
-                                </div>
-                                <div class="rating hidden-sm col-md-6">
-                                    <h5 class="">SRP: P200.00</h5>
-                                    <h6 class="">RP: P160.00</h6>
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <p><a href="#" class="hidden-sm btn btn-primary btn-block">Add to my Products</a></p>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6 text-left">
-                                    <h5 class="">Sample Product</h5>
-                                    <small>Supplier name</small>
-                                </div>
-                                <div class="rating hidden-sm col-md-6">
-                                    <h5 class="">SRP: P200.00</h5>
-                                    <h6 class="">RP: P160.00</h6>
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <p><a href="#" class="hidden-sm btn btn-primary btn-block">Add to my Products</a></p>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6 text-left">
-                                    <h5 class="">Sample Product</h5>
-                                    <small>Supplier name</small>
-                                </div>
-                                <div class="rating hidden-sm col-md-6">
-                                    <h5 class="">SRP: P200.00</h5>
-                                    <h6 class="">RP: P160.00</h6>
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <p><a href="#" class="hidden-sm btn btn-primary btn-block">Add to my Products</a></p>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6 text-left">
-                                    <h5 class="">Sample Product</h5>
-                                    <small>Supplier name</small>
-                                </div>
-                                <div class="rating hidden-sm col-md-6">
-                                    <h5 class="">SRP: P200.00</h5>
-                                    <h6 class="">RP: P160.00</h6>
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <p><a href="#" class="hidden-sm btn btn-primary btn-block">Add to my Products</a></p>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6 text-left">
-                                    <h5 class="">Sample Product</h5>
-                                    <small>Supplier name</small>
-                                </div>
-                                <div class="rating hidden-sm col-md-6">
-                                    <h5 class="">SRP: P200.00</h5>
-                                    <h6 class="">RP: P160.00</h6>
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <p><a href="#" class="hidden-sm btn btn-primary btn-block">Add to my Products</a></p>
-                            </div>
-                            <div class="clearfix">
-                            </div>
-                        </div>
-                    </div>
+                @endforeach
+
                 </div>
             </div>
         </div>
