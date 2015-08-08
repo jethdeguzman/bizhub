@@ -7,6 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Repositories\UserRepository as Users;
 
 class AuthController extends Controller
 {
@@ -28,6 +31,9 @@ class AuthController extends Controller
      *
      * @return void
      */
+
+    protected $redirectPath = '/';
+
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
@@ -42,9 +48,10 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'company_name' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'type' => 'required'
         ]);
     }
 
@@ -57,9 +64,33 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'company_name' => $data['company_name'],
+            'company_slug' => str_slug($data['company_name'], '-'),
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'type' => $data['type']
         ]);
     }
+
+    public function postRegister(Request $request, Users $user)
+    {
+        
+        $validator = $this->validator($request->all());
+        
+        if ($validator->fails()) {
+            return redirect(url('/auth/register?type='.$request->input('type')))->withErrors($validator)->withInput();
+        }
+        
+        Auth::login($this->create($request->all()));  
+
+        $user = $user->find(Auth::user()->id);
+
+        if($user->type == 1){
+            return redirect(url($this->redirectPath.'resellers'));      
+        }
+
+        return redirect(url($this->redirectPath.'suppliers'));
+
+    }
+
 }
