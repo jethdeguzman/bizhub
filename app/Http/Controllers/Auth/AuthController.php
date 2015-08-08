@@ -93,4 +93,26 @@ class AuthController extends Controller
 
     }
 
+
+    public function postLogin(Request $request, Users $user)
+    {
+        $this->validate($request, [
+            $this->loginUsername() => 'required', 'password' => 'required',
+        ]);
+
+        $credentials = $this->getCredentials($request);
+
+        if (Auth::attempt($credentials, $request->has('remember'))) {
+            
+            $user = $user->find(Auth::user()->id);
+
+            $redirect = '/suppliers';
+            if($user->type == 1){
+                $redirect = '/resellers';     
+            }
+            return redirect($redirect);
+        }else{
+            return redirect('/auth/login');
+        }
+    }
 }

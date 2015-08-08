@@ -18,9 +18,8 @@
                     <div class="panel panel-default" style="border-radius:0px; border-color:transparent;">
                         <div class="panel-body">
                             <h3>Login and start your business</h3><hr>
-                            <form action="" role="form" method="POST">
-                                
-                                <input type="hidden" name="_token" >
+                            <form action="/auth/login" role="form" method="POST">
+                                {!! csrf_field() !!}
                                 <div class="form-group input-group">
                                     <span class="input-group-addon"><i class="icon ion-ios-email-outline"></i></span>
                                     <input type="email" class="form-control" name="email" placeholder="Email Address" value="">
