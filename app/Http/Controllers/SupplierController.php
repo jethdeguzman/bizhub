@@ -8,17 +8,21 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository as User;
 use Illuminate\Contracts\Auth\Guard;
+use App\Repositories\SupplierResellerRepository as SupplierReseller;
 
 class SupplierController extends Controller
 {
 
     protected $auth;
     protected $user;
+    protected $supplierReseller;
 
-    public function __construct(Guard $auth, User $user)
+    public function __construct(Guard $auth, User $user, SupplierReseller $supplierReseller)
     {
         $this->auth = $auth;
         $this->user = $user;
+        $this->userid = $this->auth->id();
+        $this->supplierReseller = $supplierReseller;
     }
 
      /**
@@ -29,9 +33,8 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        $id = $this->auth->id();
         // Supplier type = 2
-        $resellers = $this->user->myResellers('2', $id);
+        $resellers = $this->user->myResellers('2', $this->userid);
         dd($resellers);
     }
 
@@ -46,6 +49,15 @@ class SupplierController extends Controller
         // Supplier type = 2
         $resellers = $this->user->allByType('2');
         dd($resellers);
+    }
+
+    public function hire(Request $request)
+    {
+        $reseller_id = $request->get('reseller_id');
+        return $this->supplierReseller->store(array(
+            'supplier_id' => $this->userid, 
+            'reseller_id' => $reseller_id
+            ));
     }
 
     /**
