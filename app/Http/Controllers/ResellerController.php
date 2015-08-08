@@ -35,6 +35,14 @@ class ResellerController extends Controller
         dd($suppliers);
     }
 
+    public function apply($supplier_id)
+    {
+        return $this->supplierReseller->store(array(
+            'supplier_id' => $supplier_id, 
+            'reseller_id' => $this->userid;
+            ));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
