@@ -23,11 +23,11 @@ class UserRepository extends BaseRepository implements UserInterface
     }
 
 
-    public function getMyResellers($type, $userid)
+    public function getMyResellers($userid)
     {
     	$instance = $this->getNewInstance();
         return DB::table('users')
-        			->where('type', $type)
+        			->where('type', 2)
         			->join('supplier_reseller', function($join) use ($userid)
 				        {
 				            $join->on('supplier_reseller.reseller_id', '=', 'users.id')
@@ -36,11 +36,11 @@ class UserRepository extends BaseRepository implements UserInterface
         			->get();
     }
 
-    public function getMySuppliers($type, $userid)
+    public function getMySuppliers($userid)
     {
     	$instance = $this->getNewInstance();
         return DB::table('users')
-        			->where('type', $type)
+        			->where('type', 1)
         			->join('supplier_reseller', function($join) use ($userid)
 				        {
 				            $join->on('supplier_reseller.supplier_id', '=', 'users.id')
