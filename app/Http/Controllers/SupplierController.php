@@ -34,7 +34,7 @@ class SupplierController extends Controller
     public function index()
     {
         // Supplier type = 2
-        $resellers = $this->user->myResellers('2', $this->userid);
+        $resellers = $this->user->getMyResellers('2', $this->userid);
         dd($resellers);
     }
 

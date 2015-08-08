@@ -23,7 +23,7 @@ class UserRepository extends BaseRepository implements UserInterface
     }
 
 
-    public function myResellers($type, $userid)
+    public function getMyResellers($type, $userid)
     {
     	$instance = $this->getNewInstance();
         return DB::table('users')
@@ -36,7 +36,7 @@ class UserRepository extends BaseRepository implements UserInterface
         			->get();
     }
 
-    public function mySuppliers($type, $userid)
+    public function getMySuppliers($type, $userid)
     {
     	$instance = $this->getNewInstance();
         return DB::table('users')
