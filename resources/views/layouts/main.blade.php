@@ -17,6 +17,7 @@
     <link href="/assets/css/scrolling-nav.css" rel="stylesheet">
     <link href="/assets/css/ionicons.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/jasny-bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="/assets/js/jquery.js"></script>
