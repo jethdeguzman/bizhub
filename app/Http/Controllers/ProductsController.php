@@ -6,20 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\ProductsRepository as Products;
+use App\Repositories\ProductsRepository as productRepository;
 use App\Repositories\ProductResellerRepository as ProductReseller;
 use App\Repositories\UserRepository as User;
 use Illuminate\Contracts\Auth\Guard;
 use DB;
+use App\Products as Product;
 
 class ProductsController extends Controller
 {
-    protected $products;
+    protected $productRepository;
     protected $auth;
 
-    public function __construct(Products $products, Guard $auth, User $user, ProductReseller $productReseller)
+    public function __construct(productRepository $productRepository, Guard $auth, User $user, ProductReseller $productReseller)
     {
-        $this->products = $products;
+        $this->productRepository = $productRepository;
         $this->auth = $auth;
         $this->userid = $this->auth->id();
         $this->user = $user;
@@ -38,10 +39,10 @@ class ProductsController extends Controller
     {
         if ($this->user_type == 1) {
             // Supplier
-            $products = $this->products->findBy('user_id', $this->userid);
+           $products= $this->productRepository->findBy('user_id', $this->userid);
         } else if ($this->user_type == 2) {
             // Reseller
-            $products = $this->productReseller->getProducts($this->userid);
+           $products= $this->productReseller->getProducts($this->userid);
         }
 
         dd($products);
@@ -68,7 +69,7 @@ class ProductsController extends Controller
     {
         if ($this->user_type == 1) {
             // Supplier
-            return $this->products->store(array(
+            return $this->productRepository->store(array(
                 'name' => $request->get('name'),
                 'reference_code' => $request->get('reference_code'),
                 'description' => $request->get('description'),
@@ -95,9 +96,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('products/supplier-show', ['product' => $product]);
     }
 
     /**

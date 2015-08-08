@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use App\Products;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,11 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+
+         $router->bind('products', function($value)
+        {
+            return Products::findOrFail($value);
+        });
     }
 
     /**
