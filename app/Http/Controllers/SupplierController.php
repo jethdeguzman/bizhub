@@ -34,7 +34,7 @@ class SupplierController extends Controller
     public function index()
     {
         $resellers = $this->user->getMyResellers($this->userid);
-        dd($resellers);
+        return view('suppliers.my-suppliers', ['resellers' => $resellers]);  
     }
 
     /**
@@ -47,12 +47,11 @@ class SupplierController extends Controller
     {
         // Supplier type = 2
         $resellers = $this->user->allByType('2');
-        dd($resellers);
+        return view('suppliers.all', ['resellers' => $resellers]); 
     }
 
-    public function hire(Request $request)
+    public function hire($reseller_id)
     {
-        $reseller_id = $request->get('reseller_id');
         return $this->supplierReseller->store(array(
             'supplier_id' => $this->userid, 
             'reseller_id' => $reseller_id
