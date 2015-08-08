@@ -41,7 +41,7 @@ class ProductsController extends Controller
             $products = $this->products->findBy('user_id', $this->userid);
         } else if ($this->user_type == 2) {
             // Reseller
-            // later
+            $products = $this->productReseller->getProducts($this->userid);
         }
 
         dd($products);
