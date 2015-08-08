@@ -22,6 +22,9 @@ class ProductsController extends Controller
         $this->auth = $auth;
         $this->userid = $this->auth->id();
         $this->user = $user;
+
+        $user = $this->user->find($this->userid);
+        $this->user_type = $user->type;
     }
 
     /**
@@ -31,12 +34,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $user = $this->user->find($this->userid);
-
-        if ($user->type == 1) {
+        if ($this->user_type == 1) {
             // Supplier
             $products = $this->products->findBy('user_id', $this->userid);
-        } else if ($user->type == 2) {
+        } else if ($this->user_type == 2) {
             // Reseller
             // later
         }
@@ -63,7 +64,23 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        if ($this->user_type == 1) {
+            // Supplier
+            return $this->products->store(array(
+                'name' => $request->get('name'),
+                'reference_code' => $request->get('reference_code'),
+                'description' => $request->get('description'),
+                'image' => $request->get('image'),
+                'suggested_retail_price' => $request->get('suggested_retail_price'),
+                'reseller_price' => $request->get('reseller_price'),
+                'user_id' => $this->userid
+                ));
 
+        } else if ($this->user_type == 2) {
+            // Reseller
+            
+        }
+        
     }
 
     /**
