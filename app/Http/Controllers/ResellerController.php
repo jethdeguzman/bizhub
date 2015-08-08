@@ -37,7 +37,7 @@ class ResellerController extends Controller
 
     public function all()
     {
-        $suppliers = $this->user->allByType('1');
+        $suppliers = $this->user->suppliersByType('1');
         return view('suppliers.all', ['suppliers' => $suppliers]); 
     }
 

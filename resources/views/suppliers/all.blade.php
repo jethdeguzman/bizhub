@@ -47,7 +47,11 @@
                           <div class="media-body text-left">
                             <h4 class="media-heading">{{ $supplier->company_name }}</h4>
                             <span>Connected to 6 resellers</span><br>
-                            <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="/resellers/apply/{{$supplier->id}}" class="btn btn-warning btn-xs">Apply </a></span>
+                            <span>
+                                <a href="" class="btn btn-primary btn-xs">View </a> 
+                                @if ( $supplier->applied == NULL)
+                                    <a href="/resellers/apply/{{$supplier->user_id}}" class="btn btn-warning btn-xs">Apply </a></span>
+                                @endif
                           </div>
                         </div>
                     </div>

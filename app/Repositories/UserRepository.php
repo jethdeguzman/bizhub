@@ -16,19 +16,20 @@ class UserRepository extends BaseRepository implements UserInterface
      * @param int | supplier reseller
      */
 
-    public function allByType($type)
+    public function suppliersByType($type)
     {
         $instance = $this->getNewInstance();
-        return $instance->whereType($type)->get();
+        return $instance->select('*', 'supplier_reseller.reseller_id as applied', 'users.id as user_id')
+                        ->leftJoin('supplier_reseller','supplier_reseller.supplier_id', '=', 'users.id')
+                        ->whereType($type)->get();
     }
 
     public function resellersByType($type)
     {
         $instance = $this->getNewInstance();
-        return $instance->select('users.company_name', 'supplier_reseller.reseller_id as hired', 'users.id as user_id', DB::raw("count('supplier_reseller.id') as total"))
+        return $instance->select('*', 'supplier_reseller.reseller_id as hired', 'users.id as user_id')
                         ->leftJoin('supplier_reseller','supplier_reseller.reseller_id', '=', 'users.id')
                         ->whereType($type)
-                        ->groupBy('users.company_name', 'hired', 'user_id')
                         ->get();
     }
 

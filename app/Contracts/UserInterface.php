@@ -6,7 +6,7 @@ use App\Contracts\BaseInterface;
 
 interface UserInterface extends BaseInterface{
 
-	public function allByType($type);
+	public function suppliersByType($type);
 	public function resellersByType($type);
 	public function getMyResellers($userid);
 	public function getMySuppliers($userid);
