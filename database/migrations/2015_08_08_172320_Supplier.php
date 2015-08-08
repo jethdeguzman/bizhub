@@ -14,10 +14,10 @@ class Supplier extends Migration
     {
         Schema::table('users', function($table)
         {
-            $table->string('address');
-            $table->string('contact_number');
-            $table->string('contact_person');
-            $table->string('contact_email');
+            $table->string('address')->default('');
+            $table->string('contact_number')->default('');
+            $table->string('contact_person')->default('');
+            $table->string('contact_email')->default('');
         });
     }
 

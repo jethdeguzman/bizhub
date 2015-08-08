@@ -47,7 +47,12 @@
                       <div class="media-body text-left">
                         <h4 class="media-heading">{{$reseller->company_name}}</h4>
                         <span>Connected to 6 suppliers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="/supplier/hire/{{$reseller->id}}" class="btn btn-warning btn-xs">Hire </a></span>
+                        <span>
+                            <a href="" class="btn btn-primary btn-xs">View </a> 
+                            @if ( $reseller->hired == NULL)
+                                <a href="/supplier/hire/{{$reseller->user_id}}" class="btn btn-warning btn-xs">Hire </a>
+                            @endif
+                        </span>
                       </div>
                     </div>
                 </div>
