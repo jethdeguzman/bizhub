@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\UserRepository as User;
+use App\Repositories\UserRepository as UserRepository;
+use App\Repositories\SupplierResellerRepository as SupplierResellerRepository;
 use Illuminate\Contracts\Auth\Guard;
-use App\Repositories\SupplierResellerRepository as SupplierReseller;
 
 class SupplierController extends Controller
 {
@@ -17,7 +17,7 @@ class SupplierController extends Controller
     protected $user;
     protected $supplierReseller;
 
-    public function __construct(Guard $auth, User $user, SupplierReseller $supplierReseller)
+    public function __construct(Guard $auth, UserRepository $user, SupplierResellerRepository $supplierReseller)
     {
         $this->auth = $auth;
         $this->user = $user;
@@ -34,7 +34,7 @@ class SupplierController extends Controller
     public function index()
     {
         $resellers = $this->user->getMyResellers($this->userid);
-        dd($resellers);
+        return view('suppliers.my-suppliers', ['resellers' => $resellers]);  
     }
 
     /**
@@ -47,71 +47,15 @@ class SupplierController extends Controller
     {
         // Supplier type = 2
         $resellers = $this->user->allByType('2');
-        dd($resellers);
+        return view('suppliers.all', ['resellers' => $resellers]); 
     }
 
-    public function hire(Request $request)
+    public function hire($reseller_id)
     {
-        $reseller_id = $request->get('reseller_id');
         return $this->supplierReseller->store(array(
             'supplier_id' => $this->userid, 
             'reseller_id' => $reseller_id
             ));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
