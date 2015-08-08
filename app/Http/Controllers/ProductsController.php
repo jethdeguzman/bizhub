@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Repositories\ProductsRepository as Products;
+use App\Repositories\ProductResellerRepository as ProductReseller;
 use App\Repositories\UserRepository as User;
 use Illuminate\Contracts\Auth\Guard;
 use DB;
@@ -16,12 +17,13 @@ class ProductsController extends Controller
     protected $products;
     protected $auth;
 
-    public function __construct(Products $products, Guard $auth, User $user)
+    public function __construct(Products $products, Guard $auth, User $user, ProductReseller $productReseller)
     {
         $this->products = $products;
         $this->auth = $auth;
         $this->userid = $this->auth->id();
         $this->user = $user;
+        $this->productReseller = $productReseller;
 
         $user = $this->user->find($this->userid);
         $this->user_type = $user->type;
@@ -78,6 +80,10 @@ class ProductsController extends Controller
 
         } else if ($this->user_type == 2) {
             // Reseller
+            return $this->productReseller->store(array(
+                'reseller_id' => $this->userid,
+                'product_id' => $request->get('product_id')
+                ));
             
         }
         
