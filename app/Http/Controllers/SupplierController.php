@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\UserRepository as User;
+use App\Repositories\UserRepository as UserRepository;
+use App\Repositories\SupplierResellerRepository as SupplierResellerRepository;
 use Illuminate\Contracts\Auth\Guard;
-use App\Repositories\SupplierResellerRepository as SupplierReseller;
 
 class SupplierController extends Controller
 {
@@ -17,7 +17,7 @@ class SupplierController extends Controller
     protected $user;
     protected $supplierReseller;
 
-    public function __construct(Guard $auth, User $user, SupplierReseller $supplierReseller)
+    public function __construct(Guard $auth, UserRepository $user, SupplierResellerRepository $supplierReseller)
     {
         $this->auth = $auth;
         $this->user = $user;
