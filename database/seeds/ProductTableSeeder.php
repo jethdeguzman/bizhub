@@ -45,7 +45,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'Red Dress',
 	            'reference_code' => 'P004',
 	            'description' => 'Red Dress with Ribbon',
-	            'image' => '/assets/imagesproducts/clothing-shop/dress4.jpg',
+	            'image' => '/assets/images/products/clothing-shop/dress4.jpg',
 	            'suggested_retail_price' => '250.00',
 	            'reseller_price' => '180.00',
 	            'user_id' => '3'
@@ -217,7 +217,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'CALM',
 	            'reference_code' => 'P0021',
 	            'description' => 'Keep calm and do not worry',
-	            'image' => '/assets/images/products/wearhisword/shirt1.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt1.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -227,7 +227,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'HOPE',
 	            'reference_code' => 'P0022',
 	            'description' => 'Faith Hope Love',
-	            'image' => '/assets/images/products/wearhisword/shirt2.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt2.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -237,7 +237,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'STAND',
 	            'reference_code' => 'P0023',
 	            'description' => 'Stand upon the truth',
-	            'image' => '/assets/images/products/wearhisword/shirt3.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt3.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -247,7 +247,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'TELLTHEWORLD',
 	            'reference_code' => 'P0024',
 	            'description' => 'Tell the world',
-	            'image' => '/assets/images/products/wearhisword/shirt4.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt4.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -257,7 +257,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'TRANS',
 	            'reference_code' => 'P0025',
 	            'description' => 'Transformers',
-	            'image' => '/assets/images/products/wearhisword/shirt5.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt5.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -267,7 +267,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'WOMEN',
 	            'reference_code' => 'P0026',
 	            'description' => 'Women',
-	            'image' => '/assets/images/products/wearhisword/shirt6.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt6.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -277,7 +277,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'SAVIOUR',
 	            'reference_code' => 'P0027',
 	            'description' => 'Saviour',
-	            'image' => '/assets/images/products/wearhisword/shirt7.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt7.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -287,7 +287,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'ICDAT',
 	            'reference_code' => 'P0028',
 	            'description' => 'I can do all things',
-	            'image' => '/assets/images/products/wearhisword/shirt8.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt8.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -297,7 +297,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'JOHN',
 	            'reference_code' => 'P0029',
 	            'description' => 'John 3:16',
-	            'image' => '/assets/images/products/wearhisword/shirt9.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt9.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
@@ -307,7 +307,7 @@ class ProductTableSeeder extends Seeder
 	            'name' => 'LOVE',
 	            'reference_code' => 'P0030',
 	            'description' => 'Love',
-	            'image' => '/assets/images/products/wearhisword/shirt10.jpg',
+	            'image' => '/assets/images/products/wear-his-word/shirt10.jpg',
 	            'suggested_retail_price' => '199.00',
 	            'reseller_price' => '150.00',
 	            'user_id' => '1'
