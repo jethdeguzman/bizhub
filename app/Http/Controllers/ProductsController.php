@@ -13,6 +13,8 @@ use App\Repositories\SupplierResellerRepository as SupplierResellerRepository;
 use Illuminate\Contracts\Auth\Guard;
 use DB;
 use App\Products as Product;
+use Auth;
+
 
 class ProductsController extends Controller
 {
@@ -46,7 +48,7 @@ class ProductsController extends Controller
            $products= $this->productReseller->getProducts($this->userid);
         }
 
-        dd($products);
+        return view('products.reseller-add', ['products' => $products]);
            
     }
 
@@ -146,5 +148,24 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addProduct(Product $product){
+        $reseller = Auth::user();
+
+        $this->productReseller->store(array(
+        'reseller_id' => $reseller->id,
+        'product_id' => $product->id
+        ));
+
+        $this->supplierReseller->store([
+                'reseller_id' => $reseller->id,
+                'supplier_id' => $supplier->id,
+        ]);
+
+
+        return 'New Product has been added to your store items';
+
+
     }
 }
