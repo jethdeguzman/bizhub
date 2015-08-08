@@ -46,7 +46,8 @@ class SupplierController extends Controller
     public function all()
     {
         // Supplier type = 2
-        $resellers = $this->user->allByType('2');
+        $resellers = $this->user->resellersByType('2');
+        //dd($resellers);
         return view('resellers.all', ['resellers' => $resellers]); 
     }
 

@@ -22,6 +22,14 @@ class UserRepository extends BaseRepository implements UserInterface
         return $instance->whereType($type)->get();
     }
 
+    public function resellersByType($type)
+    {
+        $instance = $this->getNewInstance();
+        return $instance->select('*', 'supplier_reseller.reseller_id as hired', 'users.id as user_id')
+                        ->leftJoin('supplier_reseller','supplier_reseller.reseller_id', '=', 'users.id')
+                        ->whereType($type)
+                        ->get();
+    }
 
     public function getMyResellers($userid)
     {
