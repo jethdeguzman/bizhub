@@ -35,8 +35,8 @@
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
-                @if(count($resellers) > 0)
-                  @foreach($resellers as $reseller)
+                @if(count($suppliers) > 0)
+                  @foreach($suppliers as $supplier)
                     <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
                         <div class="media">
                           <div class="media-left media-middle">
@@ -45,7 +45,7 @@
                             </a>
                           </div>
                           <div class="media-body text-left">
-                            <h4 class="media-heading">Middle aligned media</h4>
+                            <h4 class="media-heading">{{$supplier->company_name}}</h4>
                             <span>Resellers: 10</span><br>
                             <span>Products : 45</span>
                           </div>

@@ -35,22 +35,26 @@
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
-            @foreach($resellers as $reseller)
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">{{ $reseller->company_name }}</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="" class="btn btn-warning btn-xs">Apply </a></span>
-                      </div>
+            @if(count($suppliers) > 0)
+                @foreach($suppliers as $supplier)
+                    <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
+                        <div class="media">
+                          <div class="media-left media-middle">
+                            <a href="#">
+                              <img class="media-object" src="/assets/img/company-64.png" alt="...">
+                            </a>
+                          </div>
+                          <div class="media-body text-left">
+                            <h4 class="media-heading">{{ $supplier->company_name }}</h4>
+                            <span>Connected to 6 resellers</span><br>
+                            <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="/resellers/apply/{{$supplier->id}}" class="btn btn-warning btn-xs">Apply </a></span>
+                          </div>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            @else
+                <p style="font-size:20px;">No suppliers at the moment.</p>
+            @endif
             </div>
         </div>
     </section>

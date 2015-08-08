@@ -16,8 +16,13 @@ Route::controllers([
 ]);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/resellers', function() { return 'resllers';});
-    Route::get('/suppliers', function() { return 'suppliers';});
+
+    Route::get('/resellers', 'SupplierController@index');
+    Route::get('/resellers/all', 'SupplierController@all');
+    Route::get('/resellers/apply/{id}', 'ResellerController@apply');
+    Route::get('/suppliers', 'ResellerController@index');
+    Route::get('/suppliers/all', 'ResellerController@all');
+    Route::get('/supplier/hire/{id}', 'SupplierController@hire');
         
 });
 

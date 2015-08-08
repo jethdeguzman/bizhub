@@ -32,80 +32,22 @@ class ResellerController extends Controller
     public function index()
     {
         $suppliers = $this->user->getMySuppliers($this->userid);
-        dd($suppliers);
+        return view('suppliers.my-suppliers', ['suppliers' => $suppliers]);
+    }
+
+    public function all()
+    {
+        $suppliers = $this->user->allByType('1');
+        return view('suppliers.all', ['suppliers' => $suppliers]); 
     }
 
     public function apply($supplier_id)
     {
-        return $this->supplierReseller->store(array(
+        $this->supplierReseller->store(array(
             'supplier_id' => $supplier_id, 
-            'reseller_id' => $this->userid;
+            'reseller_id' => $this->userid
             ));
+        return redirect('/suppliers');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
