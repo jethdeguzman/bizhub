@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\ProductsRepository as productRepository;
 use App\Repositories\ProductResellerRepository as ProductReseller;
 use App\Repositories\UserRepository as User;
+use App\Repositories\SupplierResellerRepository as SupplierResellerRepository;
 use Illuminate\Contracts\Auth\Guard;
 use DB;
 use App\Products as Product;
@@ -65,7 +66,7 @@ class ProductsController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, SupplierResellerRepository $supplierResellerRepository)
     {
         if ($this->user_type == 1) {
             // Supplier
@@ -81,10 +82,22 @@ class ProductsController extends Controller
 
         } else if ($this->user_type == 2) {
             // Reseller
-            return $this->productReseller->store(array(
+            // Add products to the reseller
+            /*$this->productReseller->store(array(
                 'reseller_id' => $this->userid,
                 'product_id' => $request->get('product_id')
-                ));
+                ));*/
+            
+            $suppliers = $this->productRepository->find($request->get('product_id'));
+            $supplier_id = $suppliers->supplier_id;
+
+            // Add the relationship if not yet exists
+            if ($supplierResellerRepository->exists($supplier_id, $this->userid) < 1) {
+                $supplierResellerRepository->store(array(
+                        'supplier_id' => $supplier_id, 
+                        'reseller_id' => $this->userid
+                        ));
+            }
             
         }
         
