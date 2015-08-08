@@ -5,7 +5,7 @@
         <ul class="nav navbar-nav">
             <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
             <li>
-                <a href="/resellers">Suppliers</a>
+                <a href="/suppliers">Suppliers</a>
             </li>
             <li>
                 <a href="/products">Products</a>
@@ -26,128 +26,35 @@
         <div class="container">
             <div class="row">
                 <ul class="nav nav-pills">
-                  <li role="presentation" class="active"><a href="/resellers" >My Suppliers</a></li>
+                  <li role="presentation" class="active"><a href="/suppliers" >My Suppliers</a></li>
                   <li role="presentation"><a href="/suppliers/all">Browse All</a></li>
                 </ul>
             </div>
         </div>
     </div>
-
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
+                @if(count($resellers) > 0)
+                  @foreach($resellers as $reseller)
+                    <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
+                        <div class="media">
+                          <div class="media-left media-middle">
+                            <a href="#">
+                              <img class="media-object" src="/assets/img/company-64.png" alt="...">
+                            </a>
+                          </div>
+                          <div class="media-body text-left">
+                            <h4 class="media-heading">Middle aligned media</h4>
+                            <span>Resellers: 10</span><br>
+                            <span>Products : 45</span>
+                          </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Resellers: 10</span><br>
-                        <span>Products : 45</span>
-                      </div>
-                    </div>
-                </div>
+                  @endforeach
+                @else
+                  <p style="font-size:20px;">You have no Supplier at the moment.</p>
+                @endif
             </div>
         </div>
     </section>

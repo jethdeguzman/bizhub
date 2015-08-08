@@ -35,6 +35,7 @@
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="row">
+            @foreach($resellers as $reseller)
                 <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
                     <div class="media">
                       <div class="media-left media-middle">
@@ -43,110 +44,13 @@
                         </a>
                       </div>
                       <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
+                        <h4 class="media-heading">{{ $reseller->company_name }}</h4>
                         <span>Connected to 6 resellers</span><br>
                         <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="" class="btn btn-warning btn-xs">Apply </a></span>
                       </div>
                     </div>
                 </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <span class="label label-warning">Request Sent</span></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <span class="label label-danger">Your Supplier</span></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="" class="btn btn-warning btn-xs">Apply </a></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="" class="btn btn-warning btn-xs">Apply </a></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <a href="" class="btn btn-warning btn-xs">Apply </a></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <span class="label label-warning">Request Sent</span></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-3  col-sm-4 col-xs-12 item-wrapper">
-                    <div class="media">
-                      <div class="media-left media-middle">
-                        <a href="#">
-                          <img class="media-object" src="/assets/img/company-64.png" alt="...">
-                        </a>
-                      </div>
-                      <div class="media-body text-left">
-                        <h4 class="media-heading">Middle aligned media</h4>
-                        <span>Connected to 6 resellers</span><br>
-                        <span><a href="" class="btn btn-primary btn-xs">View </a> <span class="label label-danger">Your Supplier</span></span>
-                      </div>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </section>
