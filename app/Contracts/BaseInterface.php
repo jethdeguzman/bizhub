@@ -10,6 +10,6 @@ interface BaseInterface
     public function store(array $data);
     // public function update($id, array $data);
     // public function delete($id);
-    // public function findBy($field, $value, $columns = array('*'));
+    public function findBy($field, $value, $columns = array('*'));
 
 }

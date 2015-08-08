@@ -29,4 +29,12 @@ class BaseRepository
         $model = $this->modelName;
         return new $model;
     }
+
+    public function findBy($field, $value, $columns = array('*'))
+    {
+        $instance = $this->getNewInstance();
+        return $instance->select($columns)
+                        ->where($field, $value)
+                        ->get();
+    }
 }
