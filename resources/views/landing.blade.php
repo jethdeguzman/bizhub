@@ -76,9 +76,8 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#home">Home</a></li>
 						<li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Suppliers</a></li>
-                        <li><a href="#skills">Resellers</a></li>
-						<li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#suppliers">Suppliers</a></li>
+                        <li><a href="#resellers">Resellers</a></li>
 						<li><a href="/dashboard"><b>Get Started!</b></a></li>
 					</ul>
 				</div>
@@ -185,7 +184,7 @@
     
 	<!-- Portfolio start -->
 
-	<section id="portfolio" class="pfblock">
+	<section id="suppliers" class="pfblock">
 		<div class="container">
 			<div class="row">
 
@@ -209,8 +208,8 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     
                     <div class="grid wow zoomIn">
-                        <figure class="effect-bubba">
-                            <img src="/landing-assets/images/item-1.jpg" alt="img01"/>
+                        <figure class="effect-bubba" style="overflow:hidden; height:250px">
+                            <img src="/assets/img/hire.jpg" alt="img01"/>
                             <figcaption>
                                 <h2>Hire <span>Resellers</span></h2>
                                 <p>Helping you resell your awesome products!</p>
@@ -223,8 +222,8 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
-                        <figure class="effect-bubba">
-                            <img src="/landing-assets/images/item-2.jpg" alt="img01"/>
+                        <figure class="effect-bubba" style="overflow:hidden; height:250px">
+                            <img src="/assets/img/track.jpg" alt="img01"/>
                             <figcaption>
                                 <h2>Track <span>Growth</span></h2>
                                 <p>Expect an increase on sales!</p>
@@ -265,8 +264,8 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
-                        <figure class="effect-bubba">
-                            <img src="/landing-assets/images/item-5.jpg" alt="img01"/>
+                        <figure class="effect-bubba" style="overflow:hidden; height:250px">
+                            <img src="/assets/img/team.jpg" alt="img01"/>
                             <figcaption>
                                 <h2>Manage <span>Team</span></h2>
                                 <p>Checkout your Virtual Sales Team!</p>
@@ -301,7 +300,7 @@
     
     <!-- Skills start -->
     
-    <section class="pfblock pfblock-gray" id="skills">
+    <section class="pfblock pfblock-gray" id="resellers">
 		
 			<div class="container">
 			
@@ -356,10 +355,10 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
-                        <figure class="effect-bubba">
-                            <img src="/landing-assets/images/item-3.jpg" alt="img01"/>
+                        <figure class="effect-bubba" style="overflow:hidden; height:250px">
+                            <img src="/assets/img/discounts.jpg" alt="img01"/>
                             <figcaption>
-                                <h2>Reseller's <span>Discount</span></h2>
+                                <h2>Retail <span>Price</span></h2>
                                 <p>Earn by buying the product at a discounted price!</p>
                             </figcaption>           
                         </figure>
@@ -370,8 +369,8 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
-                        <figure class="effect-bubba">
-                            <img src="/landing-assets/images/item-4.jpg" alt="img01"/>
+                        <figure class="effect-bubba" style="overflow:hidden; height:250px">
+                            <img src="/assets/img/onlinestore.jpg" alt="img01"/>
                             <figcaption>
                                 <h2>Online <span>Store</span></h2>
                                 <p>Sell your products online!</p>
@@ -398,8 +397,8 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
-                        <figure class="effect-bubba">
-                            <img src="/landing-assets/images/item-6.jpg" alt="img01"/>
+                        <figure class="effect-bubba" style="overflow:hidden; height:250px">
+                            <img src="/assets/img/products.jpg" alt="img01"/>
                             <figcaption>
                                 <h2>Discover<span>Products</span></h2>
                                 <p>You fetch your products from suppliers</p>
