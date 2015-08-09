@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/{company_name}/store', function($company_name){
     
     $items = User::where('company_slug', $company_name)->first()->products;
+    dump($items);
     return view('store.index', ['items' => $items]);
 });
 Route::get('/', function () {
