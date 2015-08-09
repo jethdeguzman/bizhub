@@ -76,25 +76,6 @@ class ProductsController extends Controller
                 'user_id' => $this->userid
                 ));
 
-        } else if ($this->user_type == 2) {
-            // Reseller
-            // Add products to the reseller
-            /*$this->productReseller->store(array(
-                'reseller_id' => $this->userid,
-                'product_id' => $request->get('product_id')
-                ));*/
-            
-            $suppliers = $this->productRepository->find($request->get('product_id'));
-            $supplier_id = $suppliers->supplier_id;
-
-            // Add the relationship if not yet exists
-            if ($supplierResellerRepository->exists($supplier_id, $this->userid) < 1) {
-                $supplierResellerRepository->store(array(
-                        'supplier_id' => $supplier_id, 
-                        'reseller_id' => $this->userid
-                        ));
-            }
-            
         }
         
     }
@@ -122,10 +103,13 @@ class ProductsController extends Controller
         'product_id' => $productId
         ));
 
-        $this->supplierReseller->store(array(
-                'reseller_id' => $reseller->id,
-                'supplier_id' => $supplier_id,
-        ));
+        if ($this->supplierReseller->exists($supplier_id, $reseller->id) < 1) {
+            $this->supplierReseller->store(array(
+                    'reseller_id' => $reseller->id,
+                    'supplier_id' => $supplier_id,
+            ));
+        }
+            
         return redirect('/products')->with('message', 'Successfully Added to Your Products');
     }
 }
