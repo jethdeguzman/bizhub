@@ -19,7 +19,7 @@
 <body>
     
     <header id="header" class="container">
-        <h1 style="text-align:center">Wear His Word</h1>
+        <h1 style="text-align:center"><img src="/{{$user->company_logo}}" class="img-circle" width="64"> {{$user->company_name}}</h1>
         <hr>
     </header>
     <!-- Posts -->

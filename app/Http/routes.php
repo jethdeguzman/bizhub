@@ -34,8 +34,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/{company_name}/store', function($company_name){
     
-    $items = User::where('company_slug', $company_name)->first()->products;
-    return view('store.index', ['items' => $items]);
+    $user = User::where('company_slug', $company_name)->first();
+    $items = $user->products;
+    return view('store.index', ['items' => $items, 'user' => $user]);
 });
 Route::get('/', function () {
     return view('welcome');
