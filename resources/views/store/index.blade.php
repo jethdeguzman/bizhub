@@ -19,7 +19,7 @@
 <body>
     
     <header id="header" class="container">
-        <h1 style="text-align:center">Wear His Word</h1>
+        <h1 style="text-align:center"><img src="/{{$user->company_logo}}" class="img-circle" width="64"> {{$user->company_name}}</h1>
         <hr>
     </header>
     <!-- Posts -->
@@ -54,9 +54,16 @@
 
     <!-- Footer -->
     
-    <footer id="footer" class="container">
+    {{-- <footer id="footer" class="container">
         <hr>
         <p>Thanks for watching!</p>
+    </footer> --}}
+
+    <footer id="footer" class="container">
+        <div class="pull-right hidden-xs">
+          Privacy Policy | Terms of Use | About
+        </div>
+        <strong>Copyright © <?php echo date('Y'); ?> Bizhub.</strong> All rights reserved.
     </footer>
 
 
