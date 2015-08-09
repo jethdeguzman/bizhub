@@ -106,9 +106,9 @@ class AuthController extends Controller
             
             $user = $user->find(Auth::user()->id);
 
-            $redirect = '/suppliers';
+            $redirect = '/dashboard';
             if($user->type == 1){
-                $redirect = '/resellers';     
+                $redirect = '/dashboard';     
             }
             return redirect($redirect);
         }else{

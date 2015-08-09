@@ -1,6 +1,8 @@
+.nav .active { background-color: #506B83 !important; }
 p, input.form-control, textarea.form-control{
     border-radius: 0px;
 }
+.sub-nav { background-color:#1b1b1b !important; }
 
 .flat{
     border-radius: 0px;

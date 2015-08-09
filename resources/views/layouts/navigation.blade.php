@@ -8,7 +8,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">BizHub</a>
+           <a class="navbar-brand" href="/"><img src="/landing-assets/images/colored.png" style="
+    height: 190%;
+    margin-top: -10px;
+"></a>
         </div>
 
         @yield('nav-content')
