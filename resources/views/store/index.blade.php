@@ -15,6 +15,24 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
     <script src="/assets/js/store.js"></script>
+
+    <style type="text/css">
+        .footer {
+            position: absolute;
+          bottom: 0;
+          width: 100%;
+          /* Set the fixed height of the footer here */
+          height: 24px;
+        }
+        html {
+          position: relative;
+          min-height: 100%;
+        }
+        body {
+          /* Margin bottom by footer height */
+          margin-bottom: 60px;
+        }
+    </style>
 </head>
 <body>
     
@@ -59,11 +77,13 @@
         <p>Thanks for watching!</p>
     </footer> --}}
 
-    <footer id="footer" class="container">
+    <footer class="footer" id="footer" style="padding:0px 20px; background-color:#1B1B1B; color:#FFF">
         <div class="pull-right hidden-xs">
-          Privacy Policy | Terms of Use | About
+          <a href="#" style="color:#FFF">Privacy Policy</a>
+           | <a href="#" style="color:#FFF">Terms of Use</a> 
+           | <a href="#" style="color:#FFF">About</a>
         </div>
-        <strong>Copyright © <?php echo date('Y'); ?> Bizhub.</strong> All rights reserved.
+        <strong>Copyright © <?php echo date('Y'); ?> Powered by Bizhub.</strong> All rights reserved.
     </footer>
 
 

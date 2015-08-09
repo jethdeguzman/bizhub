@@ -76,8 +76,8 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#home">Home</a></li>
 						<li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Works</a></li>
-                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Suppliers</a></li>
+                        <li><a href="#skills">Resellers</a></li>
 						<li><a href="#testimonials">Testimonials</a></li>
 						<li><a href="/dashboard"><b>Get Started!</b></a></li>
 					</ul>
@@ -100,10 +100,10 @@
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="pfblock-header wow fadeInUp">
-						<h2 class="pfblock-title">This is what I do</h2>
+						<h2 class="pfblock-title">What is Bizhub</h2>
 						<div class="pfblock-line"></div>
 						<div class="pfblock-subtitle">
-							No one lights a lamp in order to hide it behind the door: the purpose of light is to create more light, to open people’s eyes, to reveal the marvels around.
+							A platform that can connect and establish a profitable relationship between Suppliers and Resellers. A platform that enables Suppliers to easily build a virtual sales team and allow Resellers to start a business by product reselling.
 						</div>
 					</div>
 
@@ -120,9 +120,9 @@
 							<span class="icon-magic-wand"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">Web Design</h3>
+							<h3 class="iconbox-title">Target Markets</h3>
 							<div class="iconbox-desc">
-								Good things come to those who wait, but only the things left by those who hustle
+								Support the resale of products and extend their reach to new target markets.
 							</div>
 						</div>
 					</div>
@@ -136,9 +136,9 @@
 							<span class="icon-puzzle"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">Web Programming</h3>
+							<h3 class="iconbox-title">Connect</h3>
 							<div class="iconbox-desc">
-								Good things come to those who wait, but only the things left by those who hustle
+								Growth of product portfolio and build a mutually beneficial and profitable relationship
 							</div>
 						</div>
 					</div>
@@ -154,7 +154,7 @@
 						<div class="iconbox-text">
 							<h3 class="iconbox-title">Branding</h3>
 							<div class="iconbox-desc">
-								Good things come to those who wait, but only the things left by those who hustle
+								Increase revenue and brand awareness without the addition of overheads or resource costs 
 							</div>
 						</div>
 					</div>
@@ -168,9 +168,9 @@
 							<span class="icon-question"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">Consultation</h3>
+							<h3 class="iconbox-title">What's Next</h3>
 							<div class="iconbox-desc">
-								Good things come to those who wait, but only the things left by those who hustle
+								Add more features to better manage your business and networks efficiently.
 							</div>
 						</div>
 					</div>
@@ -192,10 +192,10 @@
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="pfblock-header wow fadeInUp">
-						<h2 class="pfblock-title">My works</h2>
+						<h2 class="pfblock-title"><img src="/assets/img/supplier.png"> <br/> Bizhub for Suppliers</h2>
 						<div class="pfblock-line"></div>
 						<div class="pfblock-subtitle">
-							No one lights a lamp in order to hide it behind the door: the purpose of light is to create more light, to open people’s eyes, to reveal the marvels around.
+							Suppliers are also manufacturers, wholesalers, or anyone that has a huge amount of stocks of products.
 						</div>
 					</div>
 
@@ -212,8 +212,8 @@
                         <figure class="effect-bubba">
                             <img src="/landing-assets/images/item-1.jpg" alt="img01"/>
                             <figcaption>
-                                <h2>Crazy <span>Shark</span></h2>
-                                <p>Lily likes to play with crayons and pencils</p>
+                                <h2>Hire <span>Resellers</span></h2>
+                                <p>Helping you resell your awesome products!</p>
                             </figcaption>			
                         </figure>
                     </div>
@@ -226,15 +226,15 @@
                         <figure class="effect-bubba">
                             <img src="/landing-assets/images/item-2.jpg" alt="img01"/>
                             <figcaption>
-                                <h2>Funny <span>Tortoise</span></h2>
-                                <p>Lily likes to play with crayons and pencils</p>
+                                <h2>Track <span>Growth</span></h2>
+                                <p>Expect an increase on sales!</p>
                             </figcaption>			
                         </figure>
                     </div>
                     
                 </div>
                 
-                <div class="col-xs-12 col-sm-4 col-md-4">
+                <!-- <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
                         <figure class="effect-bubba">
@@ -246,9 +246,9 @@
                         </figure>
                     </div>
                     
-                </div>
+                </div> -->
                 
-                <div class="col-xs-12 col-sm-4 col-md-4">
+                <!-- <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
                         <figure class="effect-bubba">
@@ -260,7 +260,7 @@
                         </figure>
                     </div>
                     
-                </div>
+                </div> -->
                 
                 <div class="col-xs-12 col-sm-4 col-md-4">
             
@@ -268,15 +268,15 @@
                         <figure class="effect-bubba">
                             <img src="/landing-assets/images/item-5.jpg" alt="img01"/>
                             <figcaption>
-                                <h2>Crypton <span>Dude</span></h2>
-                                <p>Lily likes to play with crayons and pencils</p>
+                                <h2>Manage <span>Team</span></h2>
+                                <p>Checkout your Virtual Sales Team!</p>
                             </figcaption>			
                         </figure>
                     </div>
                     
                 </div>
                 
-                <div class="col-xs-12 col-sm-4 col-md-4">
+                <!-- <div class="col-xs-12 col-sm-4 col-md-4">
             
                     <div class="grid wow zoomIn">
                         <figure class="effect-bubba">
@@ -288,7 +288,7 @@
                         </figure>
                     </div>
                     
-                </div>
+                </div> -->
                 
             </div>
 
@@ -312,10 +312,10 @@
                         <div class="col-sm-6 col-sm-offset-3">
 
                             <div class="pfblock-header wow fadeInUp">
-                                <h2 class="pfblock-title">My Skills</h2>
+                                <h2 class="pfblock-title"><img src="/assets/img/reseller.png"><br>Bizhub for Resellers</h2>
                                 <div class="pfblock-line"></div>
                                 <div class="pfblock-subtitle">
-                                    No one lights a lamp in order to hide it behind the door: the purpose of light is to create more light, to open people’s eyes, to reveal the marvels around.
+                                    Resellers are also retailers or anyone who wants to gain income by reselling items from suppliers.
                                 </div>
                             </div>
 
@@ -323,30 +323,93 @@
 
                     </div><!-- .row -->
 					
-					<div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="80" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
-                            <span class="percent">80</span>
-                        </span>
-						<h3 class="text-center">Programming</h3>
-					</div>
-					<div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="90" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
-                            <span class="percent">90</span>
-                        </span>
-						<h3 class="text-center">Design</h3>
-					</div>
-					<div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="85" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
-                            <span class="percent">85</span>
-                        </span>
-						<h3 class="text-center">Marketing</h3>
-					</div>
-					<div class="col-sm-6 col-md-3 text-center">
-						<span data-percent="95" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
-                            <span class="percent">95</span>
-                        </span>
-						<h3 class="text-center">UI / UX</h3>
-					</div>
+					<div class="row">
+                
+                <!--<div class="col-xs-12 col-sm-4 col-md-4">
+                    
+                     <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="/landing-assets/images/item-1.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Hire <span>Resellers</span></h2>
+                                <p>Helping you resell your awesome products!</p>
+                            </figcaption>           
+                        </figure>
+                    </div>
+                    
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-4">
+            
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="/landing-assets/images/item-2.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Track <span>Growth</span></h2>
+                                <p>Expect an increase on sales!</p>
+                            </figcaption>           
+                        </figure>
+                    </div>
+                    
+                </div> -->
+                
+                <div class="col-xs-12 col-sm-4 col-md-4">
+            
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="/landing-assets/images/item-3.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Reseller's <span>Discount</span></h2>
+                                <p>Earn by buying the product at a discounted price!</p>
+                            </figcaption>           
+                        </figure>
+                    </div>
+                    
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 col-md-4">
+            
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="/landing-assets/images/item-4.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Online <span>Store</span></h2>
+                                <p>Sell your products online!</p>
+                            </figcaption>           
+                        </figure>
+                    </div>
+                    
+                </div>
+                
+                <!-- <div class="col-xs-12 col-sm-4 col-md-4">
+            
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="/landing-assets/images/item-5.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Manage <span>Team</span></h2>
+                                <p>Checkout your Virtual Sales Team!</p>
+                            </figcaption>           
+                        </figure>
+                    </div>
+                    
+                </div> -->
+                
+                <div class="col-xs-12 col-sm-4 col-md-4">
+            
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba">
+                            <img src="/landing-assets/images/item-6.jpg" alt="img01"/>
+                            <figcaption>
+                                <h2>Discover<span>Products</span></h2>
+                                <p>You fetch your products from suppliers</p>
+                            </figcaption>           
+                        </figure>
+                    </div>
+                    
+                </div>
+                
+            </div>
 					
 				</div><!--End row -->
 			
@@ -366,12 +429,12 @@
 				<div class="col-md-12 col-lg-12">
 					<h2 class="wow slideInRight" data-wow-delay=".1s">ARE YOU READY TO START?</h2>
 					<div class="calltoaction-decription wow slideInRight" data-wow-delay=".2s">
-						I'm available for freelance projects.
+						
 					</div>
 				</div>
 
 				<div class="col-md-12 col-lg-12 calltoaction-btn wow slideInRight" data-wow-delay=".3s">
-					<a href="#contact" class="btn btn-lg">Hire Me</a>
+					<a href="/auth/register" class="btn btn-lg">Let's Get Started</a>
 				</div>
 
 			</div><!-- .row -->
@@ -380,109 +443,7 @@
 
 	<!-- CallToAction end -->
 
-	<!-- Testimonials start -->
-
-	<section id="testimonials" class="pfblock pfblock-gray">
-
-		<div class="container">
-            
-            <div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<div class="pfblock-header wow fadeInUp">
-						<h2 class="pfblock-title">What my clients say</h2>
-						<div class="pfblock-line"></div>
-						<div class="pfblock-subtitle">
-							No one lights a lamp in order to hide it behind the door: the purpose of light is to create more light, to open people’s eyes, to reveal the marvels around.
-						</div>
-					</div>
-
-				</div>
-
-			</div><!-- .row -->
-
-            <div class="row">
-
-			<div id="cbp-qtrotator" class="cbp-qtrotator">
-                <div class="cbp-qtcontent">
-                    <img src="/landing-assets/images/client-1.jpg" alt="client-1" />
-                    <blockquote>
-                      <p>Work with John was a pleasure. He understood exactly what I wanted and created an awesome site for my company.</p>
-                      <footer>Pino Caruso</footer>
-                    </blockquote>
-                </div>
-                <div class="cbp-qtcontent">
-                    <img src="/landing-assets/images/client-2.jpg" alt="client-2" />
-                    <blockquote>
-                      <p>I'm really happy with the results. Get 100% satisfaction is difficult but Alex got it without problems.</p>
-                      <footer>Jane Doe</footer>
-                    </blockquote>
-                </div>
-
-            </div>		
-
-            </div><!-- .row -->
-
-					
-		</div><!-- .row -->
-	</section>
-
-	<!-- Testimonial end -->
-
-
-	<!-- Contact start -->
-
-	<section id="contact" class="pfblock">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<div class="pfblock-header">
-						<h2 class="pfblock-title">Drop me a line</h2>
-						<div class="pfblock-line"></div>
-						<div class="pfblock-subtitle">
-							No one lights a lamp in order to hide it behind the door: the purpose of light is to create more light, to open people’s eyes, to reveal the marvels around.
-						</div>
-					</div>
-
-				</div>
-
-			</div><!-- .row -->
-
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<form id="contact-form" role="form">
-						<div class="ajax-hidden">
-							<div class="form-group wow fadeInUp">
-								<label class="sr-only" for="c_name">Name</label>
-								<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
-							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="c_email">Email</label>
-								<input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
-							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-								<textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
-							</div>
-
-							<button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
-						</div>
-						<div class="ajax-response"></div>
-					</form>
-
-				</div>
-
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</section>
-
-	<!-- Contact end -->
+	
 
 	<!-- Footer start -->
 
