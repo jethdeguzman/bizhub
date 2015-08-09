@@ -460,12 +460,7 @@
 						<li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-envelope"></i></a></li>
 					</ul>
 
-					<p class="heart">
-                        Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham
-                    </p>
-                    <p class="copyright">
-                        © 2015 John Doe | Images: <a href="https://unsplash.com/">Unsplash</a> & <a href="http://zoomwalls.com/">Zoomwalls</a>
-					</p>
+				
 
 				</div>
 
