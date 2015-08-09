@@ -54,9 +54,16 @@
 
     <!-- Footer -->
     
-    <footer id="footer" class="container">
+    {{-- <footer id="footer" class="container">
         <hr>
         <p>Thanks for watching!</p>
+    </footer> --}}
+
+    <footer id="footer" class="container">
+        <div class="pull-right hidden-xs">
+          Privacy Policy | Terms of Use | About
+        </div>
+        <strong>Copyright © <?php echo date('Y'); ?> Bizhub.</strong> All rights reserved.
     </footer>
 
 
