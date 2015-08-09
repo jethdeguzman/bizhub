@@ -47,7 +47,10 @@ class ProductsController extends Controller
         
         } else if ($this->user_type == 2) {
             // Reseller
-            $products= Product::all();
+
+
+            $products = Product::all();              
+
             return view('products.reseller-add', ['products' => $products]);
         }
 

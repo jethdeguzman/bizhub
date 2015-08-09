@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 @foreach($products as $product)
-
+                    @if(!$product->obtained())
                 <div class="col-sm-3">
                     <div class="col-item" style="height:400px;">
                         <div class="photo">
@@ -101,6 +101,7 @@
                     </div>
                   </div>
                 </div>
+                @endif
                 @endforeach
 
                 </div>
