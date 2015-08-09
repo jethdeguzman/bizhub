@@ -1,14 +1,11 @@
 /* Default tags and Bootstrap classes */
 
 body {
-    font-family: 'PT Sans Caption', sans-serif;
-    color: #000099;
+    color: black;
     padding: 40px 0;
 }
 
 .lead { padding: 40px 0; }
-
-
 
 /* Grid */
 
