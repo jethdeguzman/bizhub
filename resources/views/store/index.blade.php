@@ -27,17 +27,17 @@
     <!-- <div id="grid" class="container"> -->
     <div id="grid">
         <div id="posts">
-            
+            @foreach($items as $product)
             <div class="post">
                 <div class="col-item">
                     <div class="photo">
-                        <img src="http://placehold.it/400x600" />
+                        <img src="{{ $product->image }}" />
                     </div>
                     <div class="info" >
                         <div class="row" style="padding: 0px 26px">
-                            <h3 style="text-align:left; ">Title </h3>
-                            <span class="pull-left" style="font-size:14px; ">Product Descriptiiion</span>
-                            <h3 class="pull-right">P 200</h3>
+                            <h3 style="text-align:left; ">{{ $product->name }} </h3>
+                            <span class="pull-left" style="font-size:14px; ">{{ $product->description }}</span>
+                            <h3 class="pull-right">P {{ $product->reseller_price }}</h3>
 
                         </div>
                         <div class="separator clear-left">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            
+            @endforeach
         </div>
     </div>
 
