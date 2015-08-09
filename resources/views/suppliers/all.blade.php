@@ -41,7 +41,7 @@
                         <div class="media">
                           <div class="media-left media-middle">
                             <a href="#">
-                              <img class="media-object" src="/assets/img/company-64.png" alt="...">
+                              <img class="media-object img-circle" width="64" height="65" src="/{{ $supplier->company_logo }}" >
                             </a>
                           </div>
                           <div class="media-body text-left">

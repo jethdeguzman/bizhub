@@ -11,7 +11,7 @@
 |
 */
 
-
+use App\User as User; 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
@@ -32,6 +32,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+Route::get('/{company_name}/store', function($company_name){
+    
+    $items = User::where('company_slug', $company_name)->first()->products;
+    return view('store.index', ['items' => $items]);
+});
 Route::get('/', function () {
     return view('welcome');
 });

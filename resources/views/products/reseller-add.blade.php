@@ -83,7 +83,8 @@
                         <div class="media">
                           <div class="media-left media-middle">
                             <a href="#">
-                              <img class="media-object" src="/assets/img/company-64.png" alt="...">
+                              <img class="media-object img-circle" width="64" height="65" src="{{ $product->image}}" >
+                              
                             </a>
                           </div>
                           <div class="media-body text-left">
@@ -91,7 +92,7 @@
                             <span>{{$product->description}}</span><br>
                             <span>SRP {{$product->suggested_retail_price}} | RP {{$product->reseller_price}}</span>
                           </div>
-                        </div>
+                       </div>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
