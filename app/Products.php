@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Auth;
 class Products extends Model
 {
     /**
@@ -25,5 +25,13 @@ class Products extends Model
     public function supplier()
     {
         return $this->belongsTo('App\User', 'user_id');
+    }
+
+    public function obtained()
+    {
+        $user = Auth::user();
+        return (boolean) ProductReseller::where('reseller_id', $user->id)
+                                            ->where('product_id', $this->id)
+                                            ->count();
     }
 }
