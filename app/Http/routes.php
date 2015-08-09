@@ -19,7 +19,7 @@ Route::controllers([
 
 
 Route::group(['middleware' => 'auth'], function () {
-
+	Route::get('/dashboard', 'UtilityController@dashboard');
     Route::get('/resellers', 'SupplierController@index');
     Route::get('/resellers/all', 'SupplierController@all');
     Route::get('/resellers/apply/{id}', 'ResellerController@apply');
@@ -34,9 +34,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/{company_name}/store', function($company_name){
     
-    $items = User::where('company_slug', $company_name)->first()->products;
-    return view('store.index', ['items' => $items]);
+    $user = User::where('company_slug', $company_name)->first();
+    $items = $user->products;
+    return view('store.index', ['items' => $items, 'user' => $user]);
 });
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });

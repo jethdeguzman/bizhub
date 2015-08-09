@@ -43,10 +43,13 @@ class ResellerController extends Controller
 
     public function apply($supplier_id)
     {
-        $this->supplierReseller->store(array(
-            'supplier_id' => $supplier_id, 
-            'reseller_id' => $this->userid
-            ));
+        if ($this->supplierReseller->exists($supplier_id, $this->userid) < 1) {
+            $this->supplierReseller->store(array(
+                'supplier_id' => $supplier_id, 
+                'reseller_id' => $this->userid
+                ));
+        }
+            
         return redirect('/suppliers');
     }
 
